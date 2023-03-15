@@ -4,12 +4,10 @@
 // Todo:  calculates distances below 42nd street
 // Todo:  returns a distance in blocks
 function distanceFromHqInBlocks(distance){
-    let blocks;
     if (distance > 42)
-        blocks = distance - 42;
+        return (distance - 42);
     else
-        blocks = 42 - distance;
-    return blocks;
+        return (42 - distance);
 }
 
 
@@ -17,8 +15,7 @@ function distanceFromHqInBlocks(distance){
 // Todo:  calculates distances below 42nd street
 // Todo:  returns a distance in feet
 function distanceFromHqInFeet(distance){
-    let feet = distanceFromHqInBlocks(distance) *264;
-    return feet;
+    return (distanceFromHqInBlocks(distance) *264);
 }
 
 
@@ -27,9 +24,7 @@ function distanceFromHqInFeet(distance){
 // Todo: returns a distance in feet
 // Todo: returns distance when destination is below distance
 function distanceTravelledInFeet(start, end){
-    let feet;
-    feet = distanceFromHqInFeet(end) - distanceFromHqInFeet(start);    
-    return feet;
+    return (distanceFromHqInFeet(end) - distanceFromHqInFeet(start));
 }
 
 
@@ -39,20 +34,17 @@ function distanceTravelledInFeet(start, end){
 // Todo: charges 25 dollars for a distance over 2000 feet
 // Todo: does not allow rides over 2500 feet
 function calculatesFarePrice(start, destination){
-    let feet, charge;
-    feet = distanceTravelledInFeet(start, destination);
+    let feet = distanceTravelledInFeet(start, destination);
     
     if (feet<=400){
-        charge = 0
+        return 0
     }else if (feet > 400 && feet < 2000){
-        charge  = (feet - 400)*0.02
+        return ((feet - 400)*0.02)
     }else if(feet > 2000 && feet < 2500){
-        charge = 25;
+        return 25;
     }else{
-        charge = "cannot travel that far"
+        return ("cannot travel that far")
     }
-
-    return charge;
 }
 
 console.log(calculatesFarePrice(43,44))
