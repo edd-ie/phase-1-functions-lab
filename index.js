@@ -53,16 +53,7 @@ function distanceTravelledInFeet(start, end){
 // Todo: does not allow rides over 2500 feet
 function calculatesFarePrice(start, destination){
     let feet, charge;
-    if (start > 42){
-        start = (start - 42)*264;
-        destination = (destination - 42)*264;
-        feet = destination - start;
-    }
-    else{
-        start = (42 - start)*264;
-        destination = (42 - destination)*264;
-        feet = destination - start;
-    }
+    feet = distanceTravelledInFeet(start, destination);
     
     if (feet<=400){
         charge = 0
