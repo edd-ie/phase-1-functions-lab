@@ -17,11 +17,7 @@ function distanceFromHqInBlocks(distance){
 // Todo:  calculates distances below 42nd street
 // Todo:  returns a distance in feet
 function distanceFromHqInFeet(distance){
-    let feet;
-    if (distance > 42)
-        feet = (distance - 42)*264;
-    else
-        feet = (42 - distance)*264;
+    let feet = distanceFromHqInBlocks(distance) *264;
     return feet;
 }
 
@@ -32,16 +28,7 @@ function distanceFromHqInFeet(distance){
 // Todo: returns distance when destination is below distance
 function distanceTravelledInFeet(start, end){
     let feet;
-    if (start > 42){
-        start = (start - 42)*264;
-        end = (end - 42)*264;
-        feet = end - start;
-    }
-    else{
-        start = (42 - start)*264;
-        end = (42 - end)*264;
-        feet = end - start;
-    }
+    feet = distanceFromHqInFeet(end) - distanceFromHqInFeet(start);    
     return feet;
 }
 
