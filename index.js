@@ -46,8 +46,3 @@ function calculatesFarePrice(start, destination){
         return ("cannot travel that far")
     }
 }
-
-console.log(calculatesFarePrice(43,44))
-console.log(calculatesFarePrice(34,32))
-console.log(calculatesFarePrice(50,58))
-console.log(calculatesFarePrice(34,24))
